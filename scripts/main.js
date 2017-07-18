@@ -15,4 +15,20 @@ function switchImage() {
     });
 }
 
-switchImage();
+function switchText() {
+    var images = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+    var current = document.querySelector(DETAIL_TITLE_SELECTOR);
+    images.forEach(function (image) {
+        image.addEventListener('click', function (event){
+            var title = image.getAttribute('data-image-title');
+            current.textContent = title;
+        });
+    });
+}
+
+function main() {
+    switchImage();
+    switchText();
+}
+
+main();
